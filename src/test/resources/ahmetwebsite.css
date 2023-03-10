@@ -1,0 +1,43 @@
+
+
+
+h3{
+	color: rosybrown;
+}
+
+h5,h6{
+	background:#a65729 ;
+}
+
+html{
+	background:rgb(41, 166, 166) ;
+}
+
+img{
+	margin-left: 250px;
+	border-radius: 50%;
+}
+
+
+#javatest{
+	background-color:darkgreen;
+}
+
+.java{
+	background: yellow;
+	font-size: xx-large;
+}
+
+#MENU{
+	margin-left: 500px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right:20px;
+	background-color: beige;
+	align-content: center;
+}
+
+
+
+
+
