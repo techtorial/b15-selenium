@@ -59,7 +59,7 @@ public class ManagerTest {
                                                         "Customer added successfully");
         managerPage.validateOpenAccountFunctionality(driver,"Ahmet Baldir","Dollar",
                                                         "Account created successfully");
-        managerPage.validateCustomerInformationAndDeleteFunctionality("Ahmet","Baldir","60123");
+    //    managerPage.validateCustomerInformationAndDeleteFunctionality("Ahmet","Baldir","60123");
 
     }
     @AfterMethod

@@ -52,7 +52,7 @@ public class OrderTest extends TestBaseBlaze{
         OrderPage orderPage =new OrderPage(driver);
         orderPage.clickOrderButton();
         orderPage.ValidateOrderFunctionality("Ahmet","Turkia","Ankara",
-                "","12","2025",
+                "24534534","12","2025",
                 "Thank you for your purchase!");
         Assert.assertEquals(driver.getCurrentUrl().trim(),"https://www.demoblaze.com/index.html");
     }
