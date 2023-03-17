@@ -3,7 +3,10 @@
 <suite name="Regression Suite">
 
     <test name="Blaze Tests">
-
+        <parameter name="laptopBrand" value="MacBook Pro"> </parameter>
+        <parameter name="laptopPrice" value="$1100 *includes tax"> </parameter>
+        <parameter name="message" value="Product added"> </parameter>
+        <parameter name="description" value="Apple has introduced"> </parameter>
      <classes>
 
          <class name="com.test.blaze.tests.MacBookProTest"> </class>

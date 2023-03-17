@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utils.ConfigReader;
 
 import java.time.Duration;
 
@@ -23,7 +24,7 @@ public class ManagerTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+        driver.get(ConfigReader.readProperty("QA_url"));
     }
 
     @Test
@@ -55,7 +56,8 @@ public class ManagerTest {
         LoginBankPage loginBankPage=new LoginBankPage(driver);
         loginBankPage.clickManagerButton();
         ManagerPage managerPage=new ManagerPage(driver);
-        managerPage.validateAddingCustomerFunctionality(driver,"Ahmet","Baldir","60123",
+        managerPage.validateAddingCustomerFunctionality(driver,ConfigReader.readProperty("QA_firstName"),
+                ConfigReader.readProperty("QA_lastName"),ConfigReader.readProperty("QA_postCode"),
                                                         "Customer added successfully");
         managerPage.validateOpenAccountFunctionality(driver,"Ahmet Baldir","Dollar",
                                                         "Account created successfully");

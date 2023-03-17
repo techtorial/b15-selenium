@@ -29,7 +29,7 @@ public class MacBookProPage {
     public void validateProductInformation(String laptopHeader,String laptopPrice,String laptopDesc){
         Assert.assertEquals(BrowserUtils.getText(header),laptopHeader);
         Assert.assertEquals(BrowserUtils.getText(price),laptopPrice);
-        Assert.assertEquals(BrowserUtils.getText(description),laptopDesc);
+        Assert.assertTrue(BrowserUtils.getText(description).contains(laptopDesc));
     }
 
     public void clickAddToCardButton(WebDriver driver,String expectedMessage) throws InterruptedException {

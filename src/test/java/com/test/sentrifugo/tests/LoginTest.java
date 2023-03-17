@@ -39,7 +39,7 @@ public class LoginTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("http://demo.sentrifugo.com/index.php/");
         LoginPage loginPage=new LoginPage(driver);//for pageFactory to initialize your element
-        loginPage.login("EM01","sentrifugo");
+        loginPage.login("EM01","sentrifugo") ;
         Assert.assertEquals(loginPage.validateErrorMessage(),"The username or password you entered is incorrect.");
         Assert.assertEquals(loginPage.validateColorOfErrorMessage(),"rgba(255, 0, 0, 1)");
     }

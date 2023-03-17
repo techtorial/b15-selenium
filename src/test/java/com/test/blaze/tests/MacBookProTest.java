@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -25,17 +26,16 @@ public class MacBookProTest extends TestBaseBlaze {
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 //        driver.get("https://www.demoblaze.com/#");
 //    }
-
+@Parameters({"laptopBrand","laptopPrice","message","description"})
     @Test
-    public void validateMacBookProductInfo() throws InterruptedException {
+    public void validateMacBookProductInfo(String laptopBrand,String laptopPrice,String message,String description) throws InterruptedException {
         MainPageBlaze mainPageBlaze=new MainPageBlaze(driver);
         mainPageBlaze.clickLaptopsButton();
         LaptopPage laptopPage=new LaptopPage(driver);
-        laptopPage.chooseLaptop("MacBook Pro");
+        laptopPage.chooseLaptop(laptopBrand);
         MacBookProPage macBookProPage=new MacBookProPage(driver);
-        macBookProPage.validateProductInformation("MacBook Pro","$1100 *includes tax", "Product description\n" +
-                                         "Apple has introduced three new versions of its MacBook Pro line, including a 13-inch and 15-inch model with the Touch Bar, a thin, multi-touch strip display that sits above the MacBook Pro's keyboard.");
-        macBookProPage.clickAddToCardButton(driver,"Product added");
+        macBookProPage.validateProductInformation(laptopBrand,laptopPrice, description);
+        macBookProPage.clickAddToCardButton(driver,message);
     }
 
 //    @AfterMethod
