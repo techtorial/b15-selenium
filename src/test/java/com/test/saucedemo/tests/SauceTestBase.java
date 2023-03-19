@@ -19,7 +19,7 @@ public class SauceTestBase {
     @AfterMethod
     public void tearDown(){
         BrowserUtils.getScreenShot(driver,"sauce");
-        //driver.quit();
+        driver.quit();
     }
 }
 //
